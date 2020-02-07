@@ -9,14 +9,16 @@
 <body>
 
 
-    <h1>POSTS</h1>
+    <a href="http://127.0.0.1:8000"><button>Voltar</button></a><h1>POSTS</h1>
     <div class="posts">
     {% for user in posts%}
     <div class="card">
     <p class="autor">Autor: {{user.autor}}</p>
     <p class="conteudo">"{{user.conteudo}}"</p>
     <p class="data">Data: {{user.data}}</p>
-    <img src="{{user.imagem.url}}">
+    <img id="imagem" src="{{user.imagem.url}}">
+    <a href="http://127.0.0.1:8000/posts/{{user.id}}/apagar"><button>apagar</button></a>
+    <a href="http://127.0.0.1:8000/posts/{{user.id}}/update"><button>alterar</button></a>
     </div>
     {%endfor%}
 
@@ -37,6 +39,10 @@
         justify-content: space-around;
     }
 .card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
     border-radius: 8px;
     border-style: groove;
     box-shadow: black;
@@ -55,7 +61,11 @@
 
 }
 
-
+#imagem{
+    width: 50%;
+    height: 50%;
+    margin-bottom: 2%;
+}
 
 </style>
 </html>

@@ -1,0 +1,38 @@
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="intaum">
+    <form action="" method="post">
+        {% csrf_token%}
+        <p> Autor : {% render_field form.autor %}</p>
+        <p><div class="conteudo"> Conteudo : {% render_field form.conteudo %}</div></p>
+        <p> Selecione a imagem: {% render_field form.imagem %}</p>
+        <input type="submit" value="Alterar"> 
+    </form>
+    </div>
+</body>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .intaum{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .conteudo textarea{
+        resize: none;
+    }
+</style>
+</html>

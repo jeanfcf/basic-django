@@ -9,8 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
-    {% csrf_token%}
+    <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
     <p> Autor : {% render_field form.autor %}</p>
     <p> Conteudo : {% render_field form.conteudo %}</p>
     <p> Selecione a imagem: {% render_field form.imagem %}</p>

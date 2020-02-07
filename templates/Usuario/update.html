@@ -1,0 +1,38 @@
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="intaum">
+    <form action="" method="post">
+        {% csrf_token%}
+        <p> Altere seu usuario : {% render_field form.username %}</p>
+        <p><div class="conteudo"> Altere seu email : {% render_field form.email %}</div></p>
+        <p> Altere sua senha: {% render_field form.password %}</p>
+        <input type="submit" value="Alterar"> 
+    </form>
+    </div>
+</body>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .intaum{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .conteudo textarea{
+        resize: none;
+    }
+</style>
+</html>
