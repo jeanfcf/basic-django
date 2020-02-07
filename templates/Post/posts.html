@@ -16,8 +16,11 @@
     <p class="autor">Autor: {{user.autor}}</p>
     <p class="conteudo">"{{user.conteudo}}"</p>
     <p class="data">Data: {{user.data}}</p>
+    <img src="{{user.imagem.url}}">
     </div>
     {%endfor%}
+
+    <a href="http://127.0.0.1:8000/criarposts"><button>Criar nova postagem</button></a>
     </div>
 </body>
 
@@ -29,6 +32,8 @@
     .posts{
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
         justify-content: space-around;
     }
 .card{
@@ -41,6 +46,7 @@
     box-sizing: border-box;
     word-wrap: break-word;
     padding: 1%;
+    margin-bottom: 2%;
 }
 
 .autor{
