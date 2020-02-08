@@ -9,12 +9,37 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="div">
     <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <p> Autor : {% render_field form.autor %}</p>
     <p> Conteudo : {% render_field form.conteudo %}</p>
     <p> Selecione a imagem: {% render_field form.imagem %}</p>
     <input type="submit" value="Postar">
-</form>
+    </form>
+</div>
 </body>
+
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    #div{
+
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    textarea{
+        resize: none;
+    }
+</style>
 </html>
