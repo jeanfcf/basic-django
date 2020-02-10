@@ -11,10 +11,12 @@
     <div class="intaum">
     <form action="" method="post">
         {% csrf_token%}
+        {{form.as_p}}
+        <!--
         <p> Altere seu usuario : {% render_field form.username %}</p>
         <p><div class="conteudo"> Altere seu email : {% render_field form.email %}</div></p>
         <p> Altere sua senha: {% render_field form.password %}</p>
-        <input type="submit" value="Alterar"> 
+        <input type="submit" value="Alterar"> -->
     </form>
     </div>
 </body>

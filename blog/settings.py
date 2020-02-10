@@ -91,6 +91,10 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'usuario.User'
 
+LOGIN_URL = 'usuario:loginuser'
+LOGIN_REDIRECT_URL = 'post:listaposts'
+LOGOUT_REDIRECT_URL = 'post:listaposts'
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

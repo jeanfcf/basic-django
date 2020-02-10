@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://127.0.0.1:8000/usuario"><button>Voltar</button></a><h1>DETALHES DO USUARIO</h1>
+    <div class="posts">
+    
+    <div class="card">
+    <div><strong>Username: </strong>{{user.username}}</div>
+    <div><strong>Email: </strong>{{user.email}}</div>
+    <div><strong>Last login: </strong>{{user.last_login}}</div>
+    </div>
+    <h1>POSTAGENS</h1>
+    
+    {% for users in user.posts.all%}
+    <div class="card">
+    <div><strong>"{{users.conteudo}}"</strong></user></div>
+    <div> <img src="{{users.imagem.url}}" ></div>
+    <div> Data: {{users.data}}</div>
+    </div>
+    {%endfor%}
+
+    
+    
+
+    </div>
+</body>
+
+<style>
+    h1{
+    text-align: center;
+}
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.card{
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-direction: column;
+border-radius: 8px;
+border-style: groove;
+box-shadow: black;
+text-align: center;
+background-color:rgba(211, 178, 137, 0.808);
+width: 80%;
+box-sizing: border-box;
+word-wrap: break-word;
+padding: 1%;
+margin-bottom: 2%;
+}
+
+</style>
+</html>

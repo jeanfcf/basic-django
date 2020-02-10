@@ -8,8 +8,21 @@
 </head>
 <body>
 
+    <div id="navbar">
+        <a href="http://127.0.0.1:8000"><button>Voltar</button></a>
+        <ul>
+            {% if not request.user.is_authenticated %}
+            <li><a href="{% url 'usuario:loginuser' %}"> Login</a></li> 
+            <li>||<a href="{% url 'usuario:criar' %}"> Sign up</a></li> 
+            {% else %}
+            <li>Olá, <a href="{% url 'usuario:detalhesuser' request.user.id %}"> {{ request.user.username }}</a></li> 
+            <li> || <a href="{% url 'usuario:logoutuser' %}"> Logout</a></li> 
+            {% endif %}
+        </ul>
+    </div>
 
-    <a href="http://127.0.0.1:8000"><button>Voltar</button></a><h1>POSTS</h1>
+    <h1>POSTS</h1>
+    
     <div class="posts">
     {% for user in posts%}
     <div class="card">
@@ -67,5 +80,8 @@
     margin-bottom: 2%;
 }
 
+li{
+    display: inline;
+}
 </style>
 </html>
